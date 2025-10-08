@@ -1,5 +1,8 @@
 import "./globals.css";
 
+import Image from "next/image";
+import logo from "@/assets/logo.png";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -8,8 +11,8 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full">
       <body cz-shortcut-listen="true" className="h-full flex flex-col">
-        <header className="flex w-full items-center justify-between p-5 bg-[#F2F5FA]">
-          <p>Logo</p>
+        <header className="flex w-full items-center justify-between px-10 py-2 bg-[#F2F5FA]">
+          <Image src={logo} alt="logo" width={50} height={50} />
 
           <nav className="flex gap-4">
             <button>home</button>
@@ -20,9 +23,7 @@ export default function RootLayout({
           </nav>
         </header>
 
-        <main className="flex flex-1 bg-[#EDF2F8]">
-          {children}
-        </main>
+        <main className="flex flex-1 bg-[#EDF2F8]">{children}</main>
       </body>
     </html>
   );
