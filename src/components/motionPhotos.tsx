@@ -15,11 +15,12 @@ const photos = [
   "/logoImages/prisma.svg",
   "/logoImages/postgresql.svg",
   "/logoImages/docker.svg",
+  "/logoImages/git.svg",
 ];
 
 export function MotionPhotos() {
   return (
-    <div className="flex flex-wrap justify-center gap-4 mt-4">
+    <div className="flex flex-wrap justify-center gap-4 mt-14">
       {photos.map((src, i) => (
         <motion.div
           key={src}
