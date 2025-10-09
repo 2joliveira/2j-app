@@ -37,3 +37,7 @@
 .animate-slide-right {
   animation: var(--animate-slide-right-and-fade);
 }
+
+button {
+  cursor: pointer;
+}
