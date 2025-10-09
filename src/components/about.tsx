@@ -1,6 +1,6 @@
 export function About() {
   return (
-    <div className="mt-20 w-full -ml-24 bg-blue-100 rounded-4xl p-10 flex justify-end shadow-lg shadow-black-500/40 animate-slide-right">
+    <div className="relative mt-20 z-2 w-full -ml-24 bg-blue-100 rounded-4xl p-10 flex justify-end shadow-lg shadow-black-500/40 animate-slide-right">
       <article className="w-[600px] space-y-4 text-blue-950 font-medium">
         <p>
           Sou um desenvolvedor full stack com experiência sólida em React,
