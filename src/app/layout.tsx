@@ -6,7 +6,7 @@ import logo from "@/assets/logo.png";
 import { NavigationButton } from "@/components/navigationButtons";
 
 export const metadata: Metadata = {
-  title: "Portfólio — Jefferson Oliveira",
+  title: "Jefferson Oliveira",
 };
 
 export default function RootLayout({
@@ -17,13 +17,13 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full">
       <body cz-shortcut-listen="true" className="h-full flex flex-col">
-        <header className="flex z-20 w-full items-center justify-between px-10 py-2 bg-[#F2F5FA]">
+        <header className="flex z-20 w-full items-center justify-between px-10 py-2 bg-[#F2F5FA] shadow-lg shadow-blue-700/10">
           <Image src={logo} alt="logo" width={50} height={50} />
 
           <NavigationButton />
         </header>
 
-        <main className="flex flex-1 bg-[#EDF2F8]">{children}</main>
+        <main className="flex flex-1">{children}</main>
       </body>
     </html>
   );
