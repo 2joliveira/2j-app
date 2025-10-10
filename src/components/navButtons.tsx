@@ -6,7 +6,7 @@ export function NavButtons() {
       <ButtonLink href="/">SOBRE</ButtonLink>
       {/* <button>EXPERIÊNCIAS</button> */}
       <ButtonLink href="/projects">PROJETOS</ButtonLink>
-      {/* <button>CONTATO</button> */}
+      <ButtonLink href="/contact">CONTATO</ButtonLink>
     </nav>
   );
 }

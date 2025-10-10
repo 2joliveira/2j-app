@@ -9,10 +9,11 @@ export const buttonVariants = tv({
       primary:
         "text-blue-950 hover:text-blue-900 hover:bg-blue-50 hover:shadow-[0_0_10px_rgba(59,130,246,0.3)]",
       secondary:
-        "w-full text-[14px] text-white font-bold bg-blue-950 p-2 rounded-xl hover:bg-blue-900 text-center transition-colors",
+        "w-full text-white bg-blue-950 p-2 hover:bg-blue-900 text-center transition-colors",
     },
     size: {
-      sm: "h-7 py-1 px-3",
+      sm: "h-7 p-3",
+      md: "h-10 p-4",
     },
     disabled: {
       true: "opacity-50 pointer-events-none",
