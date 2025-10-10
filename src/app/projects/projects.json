@@ -1,0 +1,39 @@
+[
+  {
+    "src": "/videos/fincheck.mp4",
+    "title": "Fincheck",
+    "web_repository": "https://github.com/2joliveira/fincheck_web",
+    "api_repository": "https://github.com/2joliveira/fincheck_api",
+    "domain": "https://fincheck-web-alpha.vercel.app/",
+    "description": "O Fincheck é um aplicativo desenvolvido para ajudar usuários a monitorar suas finanças pessoais de forma fácil e eficiente. O objetivo do projeto é fornecer ferramentas que permitam o controle total sobre contas bancárias, investimentos, despesas, receitas e planejamento financeiro."
+  },
+  {
+    "src": "/videos/gallery-plus.mp4",
+    "title": "Gallery +",
+    "web_repository": "https://github.com/2joliveira/gallery-plus-web",
+    "api_repository": "https://github.com/2joliveira/gallery-plus-api",
+    "domain": "https://gallery-plus-web.vercel.app/",
+    "description": "Gallery Plus Web é uma aplicação moderna de galeria de fotos desenvolvida utilizando React + TypeScript, criada com Vite para desenvolvimento rápido, TanStack Query (React Query) para gerenciamento de dados assíncronos e nuqs para gerenciar o estado dos search params com uma tipagem segura. O projeto oferece uma experiência responsiva e intuitiva para visualizar, buscar, filtrar, navegar e gerenciar fotos e álbuns, combinando performance, usabilidade e design contemporâneo."
+  },
+  {
+    "src": "/videos/coffee-delivery.mp4",
+    "title": "Coffee Delivery",
+    "web_repository": "https://github.com/2joliveira/coffee-delivery",
+    "domain": "https://coffee-delivery-jade.vercel.app/",
+    "description": "Aplicação para gerenciar um carrinho de compras de uma cafeteria fictícia."
+  },
+  {
+    "src": "/videos/jj-blog.mp4",
+    "title": "Blog",
+    "web_repository": "https://github.com/2joliveira/jj-blog",
+    "domain": "https://jj-blog-eta.vercel.app/",
+    "description": "Este projeto foi desenvolvido com o objetivo de praticar e aprofundar os fundamentos do Next.js, explorando tanto o Pages Router quanto o App Router. A proposta foi criar uma base sólida de conhecimento sobre a stack do Next.js, com foco tanto na teoria quanto na prática."
+  },
+  {
+    "src": "/videos/todolist.mp4",
+    "title": "To Do List",
+    "web_repository": "https://github.com/2joliveira/todo",
+    "domain": "https://todo-bay-iota-83.vercel.app/",
+    "description": "Este projeto é uma aplicação de listagem de tarefas interativa, desenvolvida em React com TypeScript, utilizando o Vite como bundler para alta performance. O objetivo é oferecer uma experiência completa de CRUD (criar, ler, atualizar, deletar) de tarefas, com interface moderna e responsiva. A aplicação inclui funcionalidades como adicionar, editar, marcar tarefas como concluídas, e gerenciamento de estados dinâmicos, tudo em uma SPA organizada."
+  }
+]
