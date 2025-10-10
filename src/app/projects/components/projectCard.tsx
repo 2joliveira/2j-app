@@ -1,3 +1,4 @@
+import { ButtonLink } from "@/components/buttonLink";
 import Link from "next/link";
 import ReactPlayer from "react-player";
 
@@ -21,7 +22,7 @@ export function ProjectCard({
         <div>
           <h2 className="text-2xl font-bold text-blue-950 mb-4">{title}</h2>
 
-          <section className="max-h-[500px] overflow-y-auto custom-scroll pr-2">
+          <section className="max-h-[500px] overflow-y-auto custom-scroll p-2 bg-blue-50">
             {description.map((paragraph, i) => (
               <p key={`paragraph-${i}`} className="mb-4 max-w-[500px]">
                 {paragraph}
@@ -32,28 +33,20 @@ export function ProjectCard({
 
         <div className="flex flex-col w-full gap-2">
           <div className="flex w-full gap-2">
-            <Link
-              className="w-full text-[14px] text-white font-bold bg-blue-950 p-2 rounded-xl hover:bg-blue-900 text-center transition-colors"
-              href={web_repository}
-            >
+            <ButtonLink href={web_repository} variant="secondary">
               Repositório WEB
-            </Link>
+            </ButtonLink>
 
             {api_repository && (
-              <Link
-                className="w-full text-[14px] text-white font-bold bg-blue-950 p-2 rounded-xl hover:bg-blue-900 text-center transition-colors"
-                href={api_repository}
-              >
+              <ButtonLink href={api_repository} variant="secondary">
                 Repositório API
-              </Link>
+              </ButtonLink>
             )}
           </div>
-          <Link
-            className="w-full text-[14px] text-white font-bold bg-blue-950 p-2 rounded-xl hover:bg-blue-900 text-center transition-colors"
-            href={domain}
-          >
+
+          <ButtonLink href={domain} variant="secondary">
             Acessar Domínio
-          </Link>
+          </ButtonLink>
         </div>
       </section>
 
