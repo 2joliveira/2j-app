@@ -3,7 +3,7 @@ import "./globals.css";
 import { Metadata } from "next";
 import Image from "next/image";
 import logo from "@/assets/logo.png";
-import { NavigationButton } from "@/components/navigationButtons";
+import { NavButtons } from "@/components/navButtons";
 
 export const metadata: Metadata = {
   title: "Jefferson Oliveira",
@@ -20,7 +20,7 @@ export default function RootLayout({
         <header className="flex z-20 w-full items-center justify-between px-10 py-2 bg-[#F2F5FA] shadow-lg shadow-blue-700/10">
           <Image src={logo} alt="logo" width={50} height={50} />
 
-          <NavigationButton />
+          <NavButtons />
         </header>
 
         <main className="flex flex-1">{children}</main>
