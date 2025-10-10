@@ -5,7 +5,17 @@
     "web_repository": "https://github.com/2joliveira/fincheck_web",
     "api_repository": "https://github.com/2joliveira/fincheck_api",
     "domain": "https://fincheck-web-alpha.vercel.app/",
-    "description": "O Fincheck é um aplicativo desenvolvido para ajudar usuários a monitorar suas finanças pessoais de forma fácil e eficiente. O objetivo do projeto é fornecer ferramentas que permitam o controle total sobre contas bancárias, investimentos, despesas, receitas e planejamento financeiro."
+    "description": [
+      "O Fincheck é uma aplicação full stack desenvolvida com o objetivo de ajudar usuários a monitorar e gerenciar suas finanças pessoais de forma simples, moderna e eficiente. O sistema permite o controle completo de contas bancárias, transações, despesas, receitas e categorias, oferecendo uma visão clara e organizada da saúde financeira do usuário.",
+
+      "No frontend, o projeto foi construído com React, TypeScript e Vite, utilizando TailwindCSS para a estilização e um Design System próprio, garantindo consistência visual, acessibilidade e reutilização de componentes. Foram aplicadas boas práticas de arquitetura de componentes, rotas públicas e privadas com React Router DOM, gerenciamento de cache e dados de servidor com TanStack React Query, além de manipulação de formulários e validação com React Hook Form e Zod. A interface conta ainda com modais reutilizáveis, dropdowns acessíveis, notificações com React Hot Toast e carrosséis dinâmicos de contas bancárias utilizando o Swiper, resultando em uma experiência fluida e responsiva.",
+
+      "O backend foi desenvolvido com Node.js e NestJS, estruturado de forma modular e seguindo boas práticas de segurança, validação e organização do código. A aplicação conta com autenticação JWT para proteção de rotas, criptografia de senhas com bcryptjs, validação e transformação de dados utilizando class-validator e class-transformer, além de decorators customizados e pipes personalizados para validação e manipulação de dados. O banco de dados utilizado é o PostgreSQL, com integração e modelagem de dados realizada via Prisma ORM, e toda a aplicação é containerizada com Docker.",
+
+      "Entre as principais funcionalidades, o Fincheck oferece CRUD completo de contas bancárias e transações, filtros por mês, ano, tipo e conta, listagem de categorias, além de uma dashboard interativa que apresenta os dados financeiros de forma visual e organizada.",
+
+      "O projeto reflete a aplicação prática de conceitos avançados de desenvolvimento full stack, unindo performance, escalabilidade e uma experiência de usuário centrada em usabilidade e design limpo."
+    ]
   },
   {
     "src": "/videos/gallery-plus.mp4",
@@ -13,27 +23,55 @@
     "web_repository": "https://github.com/2joliveira/gallery-plus-web",
     "api_repository": "https://github.com/2joliveira/gallery-plus-api",
     "domain": "https://gallery-plus-web.vercel.app/",
-    "description": "Gallery Plus Web é uma aplicação moderna de galeria de fotos desenvolvida utilizando React + TypeScript, criada com Vite para desenvolvimento rápido, TanStack Query (React Query) para gerenciamento de dados assíncronos e nuqs para gerenciar o estado dos search params com uma tipagem segura. O projeto oferece uma experiência responsiva e intuitiva para visualizar, buscar, filtrar, navegar e gerenciar fotos e álbuns, combinando performance, usabilidade e design contemporâneo."
+    "description": [
+      "Aplicação full stack desenvolvida para oferecer uma experiência eficiente, responsiva e escalável na organização e visualização de imagens.",
+
+      "O front end foi desenvolvido utilizando React e TypeScript, com o Vite como ferramenta de build para garantir um ambiente de desenvolvimento rápido e otimizado. O projeto proporciona uma interface moderna, fluida e intuitiva, permitindo ao usuário visualizar, buscar, filtrar, paginar e gerenciar fotos e álbuns de maneira simples e eficaz. Para o gerenciamento de dados assíncronos e cache, é utilizado o TanStack Query (React Query). O nuqs é empregado para o controle do estado dos parâmetros de busca, oferecendo tipagem segura e uma navegação consistente. Além disso, o uso do Tailwind CSS garante um design responsivo e adaptável a diferentes dispositivos, mantendo uma experiência de uso agradável em qualquer formato de tela.",
+
+      "O back end foi desenvolvido com Node.js e NestJS, utilizando Prisma ORM para o mapeamento objeto-relacional e PostgreSQL como banco de dados principal. A API permite o gerenciamento completo de álbuns e fotos, incluindo operações de criação, leitura, atualização e exclusão, além de possibilitar o relacionamento de fotos com múltiplos álbuns e a realização de buscas com filtros específicos. O upload e o armazenamento das imagens são realizados em nuvem, por meio do serviço Backblaze B2, que oferece compatibilidade com a API do Amazon S3 e é acessado através do AWS SDK.",
+
+      "A aplicação ainda conta com configuração por variáveis de ambiente, validação dos dados de entrada utilizando as bibliotecas class-validator e Zod, e conteinerização dos serviços via Docker para facilitar o desenvolvimento."
+    ]
   },
   {
     "src": "/videos/coffee-delivery.mp4",
     "title": "Coffee Delivery",
     "web_repository": "https://github.com/2joliveira/coffee-delivery",
     "domain": "https://coffee-delivery-jade.vercel.app/",
-    "description": "Aplicação para gerenciar um carrinho de compras de uma cafeteria fictícia."
+    "description": [
+      "O Coffee Delivery é uma aplicação desenvolvida como parte de um desafio proposto pela Rocketseat, com o objetivo de simular o sistema de pedidos de uma cafeteria fictícia. O projeto foi construído com foco na gestão de um carrinho de compras, oferecendo uma experiência completa de navegação, seleção e finalização de pedidos de café.",
+
+      "A aplicação permite visualizar a listagem de produtos disponíveis, adicionar quantidades específicas de cafés ao carrinho, ajustar ou remover itens e preencher um formulário de endereço para entrega. Além disso, o total de itens é exibido no cabeçalho e o valor final é calculado automaticamente com base nas quantidades e preços selecionados.",
+
+      "Durante o desenvolvimento, foram aplicados conceitos fundamentais do React, como gerenciamento de estado, uso da Context API, persistência de dados no LocalStorage, imutabilidade, componentização e boas práticas com listas e propriedades.",
+
+      "O projeto foi construído utilizando React com Vite e TypeScript, contando também com ferramentas modernas como React Hook Form e Zod para validação de formulários, React Router DOM para navegação entre páginas, e Styled Components para estilização. Ícones do Phosphor Icons complementam a interface, enquanto o ESLint garante a padronização e a qualidade do código."
+    ]
   },
   {
     "src": "/videos/jj-blog.mp4",
     "title": "Blog",
     "web_repository": "https://github.com/2joliveira/jj-blog",
     "domain": "https://jj-blog-eta.vercel.app/",
-    "description": "Este projeto foi desenvolvido com o objetivo de praticar e aprofundar os fundamentos do Next.js, explorando tanto o Pages Router quanto o App Router. A proposta foi criar uma base sólida de conhecimento sobre a stack do Next.js, com foco tanto na teoria quanto na prática."
+    "description": [
+      "O projeto foi desenvolvido com o propósito de consolidar e aprofundar os conhecimentos sobre o ecossistema do Next.js, explorando de forma prática tanto o Pages Router quanto o App Router. Durante o desenvolvimento, foram aplicados conceitos fundamentais do framework, como roteamento, estratégias de renderização, incluindo SSR (Server-Side Rendering), SSG (Static Site Generation) e ISR (Incremental Static Regeneration), além de diferentes abordagens de data fetching.",
+
+      "A estilização foi feita com Tailwind CSS, promovendo um design responsivo, moderno e de fácil manutenção, enquanto a biblioteca Shadcn UI foi utilizada para compor uma interface consistente e bem estruturada.",
+
+      "Foram aplicadas ainda boas práticas de SEO, assegurando que o projeto siga recomendações para otimização em motores de busca."
+    ]
   },
   {
     "src": "/videos/todolist.mp4",
     "title": "To Do List",
     "web_repository": "https://github.com/2joliveira/todo",
     "domain": "https://todo-bay-iota-83.vercel.app/",
-    "description": "Este projeto é uma aplicação de listagem de tarefas interativa, desenvolvida em React com TypeScript, utilizando o Vite como bundler para alta performance. O objetivo é oferecer uma experiência completa de CRUD (criar, ler, atualizar, deletar) de tarefas, com interface moderna e responsiva. A aplicação inclui funcionalidades como adicionar, editar, marcar tarefas como concluídas, e gerenciamento de estados dinâmicos, tudo em uma SPA organizada."
+    "description": [
+      "O ToDo é uma aplicação interativa de listagem de tarefas desenvolvida com React e TypeScript, utilizando o Vite como bundler para garantir alta performance no ambiente de desenvolvimento. O projeto tem como objetivo oferecer uma experiência completa de CRUD (criar, ler, atuallizar e deletar) de tarefas, em uma Single Page Application moderna, responsiva e organizada.",
+
+      "Durante o desenvolvimento, foram aplicadas estratégias que priorizam a escalabilidade, acessibilidade e manutenção do código, como o uso da CVA (Class Variance Authority) para estilização dinâmica e consistente com Tailwind CSS, além da importação de SVGs via SVGR para facilitar a personalização de ícones e elementos gráficos. Os componentes foram projetados para serem flexíveis e acessíveis, com suporte a propriedades configuráveis que garantem maior reutilização.",
+
+      "O gerenciamento de estado da aplicação é feito através de hooks customizados e React state, garantindo um controle eficiente sobre as tarefas e suas alterações. Para enriquecer a experiência do usuário, foi implementada a simulação de requisições HTTP, oferecendo feedback visual durante operações de carregamento."
+    ]
   }
 ]
