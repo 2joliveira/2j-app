@@ -5,7 +5,7 @@ interface ProjectCardProps {
   slide: {
     title: string;
     src: string;
-    description: string;
+    description: string[];
     web_repository: string;
     api_repository?: string;
     domain: string;
@@ -18,11 +18,17 @@ export function ProjectCard({
   return (
     <div className="flex justify-between gap-6 px-4">
       <section className="flex flex-col items-center justify-between">
-        <span>
+        <div>
           <h2 className="text-2xl font-bold text-blue-950 mb-4">{title}</h2>
 
-          <p className="mb-4 max-w-[500px]">{description}</p>
-        </span>
+          <section className="max-h-[500px] overflow-y-auto custom-scroll pr-2">
+            {description.map((paragraph, i) => (
+              <p key={`paragraph-${i}`} className="mb-4 max-w-[500px]">
+                {paragraph}
+              </p>
+            ))}
+          </section>
+        </div>
 
         <div className="flex flex-col w-full gap-2">
           <div className="flex w-full gap-2">
