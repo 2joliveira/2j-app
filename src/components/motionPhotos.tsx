@@ -20,7 +20,7 @@ const photos = [
 
 export function MotionPhotos() {
   return (
-    <div className="flex flex-wrap justify-center gap-4 mt-14">
+    <div className="flex flex-wrap justify-center gap-4 mt-8">
       {photos.map((src, i) => (
         <motion.div
           key={src}

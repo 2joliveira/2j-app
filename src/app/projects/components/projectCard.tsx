@@ -20,7 +20,7 @@ export function ProjectCard({
     <div className="flex justify-between gap-6 px-4">
       <section className="flex flex-col items-center justify-between">
         <div>
-          <h2 className="text-2xl font-bold text-blue-950 mb-4">{title}</h2>
+          <h2 className="text-3xl font-extrabold text-blue-950 mb-4">{title}</h2>
 
           <section className="max-h-[500px] overflow-y-auto custom-scroll p-2 bg-blue-50">
             {description.map((paragraph, i) => (
@@ -33,19 +33,19 @@ export function ProjectCard({
 
         <div className="flex flex-col w-full gap-2">
           <div className="flex w-full gap-2">
-            <ButtonLink href={web_repository} variant="secondary">
-              Repositório WEB
+            <ButtonLink size="md" href={web_repository} variant="secondary">
+              REPOSITÓRIO WEB
             </ButtonLink>
 
             {api_repository && (
-              <ButtonLink href={api_repository} variant="secondary">
-                Repositório API
+              <ButtonLink size="md" href={api_repository} variant="secondary">
+                REPOSITÓRIO API
               </ButtonLink>
             )}
           </div>
 
-          <ButtonLink href={domain} variant="secondary">
-            Acessar Domínio
+          <ButtonLink size="md" href={domain} variant="secondary">
+            ACESSAR DOMÍNIO
           </ButtonLink>
         </div>
       </section>
