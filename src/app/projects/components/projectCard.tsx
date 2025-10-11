@@ -22,7 +22,7 @@ export function ProjectCard({
         <div>
           <h2 className="text-3xl font-extrabold text-blue-950 mb-4">{title}</h2>
 
-          <section className="max-h-[500px] overflow-y-auto custom-scroll p-2 bg-blue-50">
+          <section className="max-h-[430px] overflow-y-auto custom-scroll p-2 bg-blue-50">
             {description.map((paragraph, i) => (
               <p key={`paragraph-${i}`} className="mb-4 max-w-[500px]">
                 {paragraph}

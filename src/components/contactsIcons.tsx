@@ -1,16 +1,17 @@
 import Link from "next/link";
 
-import { GitHubLogoIcon, LinkedInLogoIcon } from "@radix-ui/react-icons";
+import { SiGithub, SiLinkedin } from "react-icons/si";
+
 
 export function ContactsIcons() {
   return (
     <div className="flex gap-4">
       <Link href="https://github.com/2joliveira">
-        <GitHubLogoIcon className="w-8 h-8 hover:text-white hover:bg-black rounded-lg" />
+        <SiGithub className="w-8 h-8 hover:fill-blue-900 hover:shadow-lg hover:shadow-blue-300 rounded-full" />
       </Link>
 
       <Link href="https://www.linkedin.com/in/jeffersonjcoliveira/">
-        <LinkedInLogoIcon className="w-8 h-8 hover:text-white hover:bg-black rounded-lg" />
+        <SiLinkedin className="w-8 h-8 hover:fill-blue-900 hover:shadow-lg hover:shadow-blue-300 rounded-lg" />
       </Link>
     </div>
   );
