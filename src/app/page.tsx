@@ -1,9 +1,8 @@
 import Image from "next/image";
+import { SiGithub, SiLinkedin } from "react-icons/si";
+import { About, ButtonLink, MotionPhotos } from "@/components";
 import profileImage from "@/assets/profile.jpg";
 import homeImage from "@/assets/home.jpg";
-import { MotionPhotos } from "@/components/motionPhotos";
-import { About } from "@/components/about";
-import { ContactsIcons } from "@/components/contactsIcons";
 
 export default function Home() {
   return (
@@ -20,11 +19,22 @@ export default function Home() {
 
         <div className="w-full">
           <span className="flex gap-10 items-center justify-start">
-            <h2 className="font-extrabold text-3xl text-gray-800">
+            <h2 className="font-extrabold text-3xl text-blue-950">
               Jefferson Oliveira
             </h2>
 
-            <ContactsIcons />
+            <div className="flex gap-4">
+              <ButtonLink size="sm" href="https://github.com/2joliveira">
+                <SiGithub className="w-7 h-7" />
+              </ButtonLink>
+
+              <ButtonLink
+                size="sm"
+                href="https://www.linkedin.com/in/jeffersonjcoliveira/"
+              >
+                <SiLinkedin className="w-7 h-7" />
+              </ButtonLink>
+            </div>
           </span>
           <h3 className="font-medium text-gray-500 ml-2">
             Desenvolvedor Full stack

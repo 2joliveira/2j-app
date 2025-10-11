@@ -3,7 +3,7 @@ import Link, { type LinkProps } from "next/link"
 import { tv, type VariantProps } from "tailwind-variants"
 
 export const buttonVariants = tv({
-  base: "flex items-center justify-center cursor-pointer transition rounded group gap-1 text-sm font-semibold",
+  base: "flex items-center justify-center cursor-pointer transition rounded gap-2 text-sm font-semibold",
   variants: {
     variant: {
       primary:
@@ -12,8 +12,9 @@ export const buttonVariants = tv({
         "w-full text-white bg-blue-950 p-2 hover:bg-blue-900 text-center transition-colors",
     },
     size: {
-      sm: "h-7 p-3",
-      md: "h-10 p-4",
+      sm: "p-1",
+      md: "h-7 p-3",
+      lg: "h-10 p-4",
     },
     disabled: {
       true: "opacity-50 pointer-events-none",
@@ -21,7 +22,7 @@ export const buttonVariants = tv({
   },
   defaultVariants: {
     variant: "primary",
-    size: "sm",
+    size: "md",
     disabled: false,
   },
 })
