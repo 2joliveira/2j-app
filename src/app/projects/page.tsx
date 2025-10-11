@@ -4,7 +4,7 @@ import { ProjectList } from "./components/projectList";
 
 export default function Projects() {
   return (
-    <div className="w-full p-5">
+    <div className="w-full py-1 px-4">
       <h1 className={`${coiny.className} text-4xl text-white drop-shadow-[0_6px_4px_rgba(0,0,0,0.6)] mb-5`}>
         <span className="text-blue-800">Pro</span>jetos
       </h1>

@@ -4,7 +4,7 @@ import React, { useCallback, useEffect, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import { motion } from "framer-motion";
-import { ArrowLeftIcon, ArrowRightIcon } from "@radix-ui/react-icons";
+import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from "react-icons/fa";
 import { ProjectCard } from "./projectCard";
 import slides from "../projects.json";
 
@@ -71,10 +71,10 @@ export function ProjectList() {
       <div className="flex justify-between items-center mt-3 gap-2">
         <button
           onClick={scrollPrev}
-          className="bg-black/40 hover:bg-black/60 text-white p-2 rounded-full transition mr-4"
+          className="text-[#6a7282] rounded-full transition mr-4 hover:text-blue-950 hover:shadow-lg hover:shadow-blue-300"
           aria-label="Anterior"
         >
-          <ArrowLeftIcon className="w-5 h-5" />
+          <FaArrowAltCircleLeft className="w-8 h-8" />
         </button>
 
         <div className="space-x-2 pt-1">
@@ -84,7 +84,7 @@ export function ProjectList() {
               onClick={() => scrollTo(i)}
               className={`w-3 h-3 rounded-full transition ${
                 i === selectedIndex
-                  ? "bg-blue-800 scale-110"
+                  ? "bg-blue-950 scale-110"
                   : "bg-gray-400 hover:bg-gray-500"
               }`}
             />
@@ -93,10 +93,10 @@ export function ProjectList() {
 
         <button
           onClick={scrollNext}
-          className="bg-black/40 hover:bg-black/60 text-white p-2 rounded-full transition ml-4"
+          className="text-[#6a7282] rounded-full transition ml-4 hover:text-blue-950 hover:shadow-lg hover:shadow-blue-300"
           aria-label="Próximo"
         >
-          <ArrowRightIcon className="w-5 h-5" />
+          <FaArrowAltCircleRight className="w-8 h-8" />
         </button>
       </div>
     </main>

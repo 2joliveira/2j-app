@@ -29,13 +29,16 @@
   --animate-slide-right-and-fade: slide-right-and-fade 1.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-
 .animate-slide-down {
   animation: var(--animate-slide-down-and-fade);
 }
 
 .animate-slide-right {
   animation: var(--animate-slide-right-and-fade);
+}
+
+button {
+  cursor: pointer;
 }
 
 ::-webkit-scrollbar {
