@@ -4,7 +4,7 @@ import React, { useCallback, useEffect, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import { motion } from "framer-motion";
-import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from "react-icons/fa";
+import { TbArrowBigLeftFilled, TbArrowBigRightFilled } from "react-icons/tb";
 import { ProjectCard } from "./projectCard";
 import slides from "../projects.json";
 
@@ -71,10 +71,10 @@ export function ProjectList() {
       <div className="flex justify-between items-center mt-3 gap-2">
         <button
           onClick={scrollPrev}
-          className="text-[#6a7282] rounded-full transition mr-4 hover:text-blue-950 hover:shadow-lg hover:shadow-blue-300"
+          className="text-blue-950 rounded-lg p-2 transition hover:text-blue-900 hover:shadow-[0_0_10px_rgba(59,130,246,0.3)]"
           aria-label="Anterior"
         >
-          <FaArrowAltCircleLeft className="w-8 h-8" />
+          <TbArrowBigLeftFilled className="w-5 h-5" />
         </button>
 
         <div className="space-x-2 pt-1">
@@ -85,7 +85,7 @@ export function ProjectList() {
               className={`w-3 h-3 rounded-full transition ${
                 i === selectedIndex
                   ? "bg-blue-950 scale-110"
-                  : "bg-gray-400 hover:bg-gray-500"
+                  : "bg-gray-400 hover:bg-blue-900"
               }`}
             />
           ))}
@@ -93,10 +93,10 @@ export function ProjectList() {
 
         <button
           onClick={scrollNext}
-          className="text-[#6a7282] rounded-full transition ml-4 hover:text-blue-950 hover:shadow-lg hover:shadow-blue-300"
+          className="text-blue-950 rounded-lg p-2 transition hover:text-blue-900 hover:shadow-[0_0_10px_rgba(59,130,246,0.3)]"
           aria-label="Próximo"
         >
-          <FaArrowAltCircleRight className="w-8 h-8" />
+          <TbArrowBigRightFilled className="w-5 h-5" />
         </button>
       </div>
     </main>

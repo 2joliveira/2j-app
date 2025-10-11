@@ -33,18 +33,18 @@ export function ProjectCard({
 
         <div className="flex flex-col w-full gap-2">
           <div className="flex w-full gap-2">
-            <ButtonLink size="md" href={web_repository} variant="secondary">
+            <ButtonLink size="lg" href={web_repository} variant="secondary">
               REPOSITÓRIO WEB
             </ButtonLink>
 
             {api_repository && (
-              <ButtonLink size="md" href={api_repository} variant="secondary">
+              <ButtonLink size="lg" href={api_repository} variant="secondary">
                 REPOSITÓRIO API
               </ButtonLink>
             )}
           </div>
 
-          <ButtonLink size="md" href={domain} variant="secondary">
+          <ButtonLink size="lg" href={domain} variant="secondary">
             ACESSAR DOMÍNIO
           </ButtonLink>
         </div>
