@@ -1,11 +1,11 @@
 import { forwardRef } from "react";
 import { tv, type VariantProps } from "tailwind-variants";
 
-const inputVariants = tv({
-  base: "peer h-[52px] w-full rounded-lg bg-blue-50 text-blue-950 transition-all outline-none placeholder-transparent placeholder-shown:pt-0 focus:border-1 focus:border-blue-900",
+const textAreaVariants = tv({
+  base: "peer h-full max-h-[300px] min-h-[52px] p-3 w-full rounded-lg bg-blue-50 text-blue-950 transition-all outline-none placeholder-transparent placeholder-shown:pt-3 focus:border-1 focus:border-blue-900 shadow-lg",
   variants: {
     size: {
-      md: "px-3 pt-4",
+      md: "pt-6",
     },
     disabled: {
       true: "pointer-events-none opacity-60",
@@ -17,36 +17,36 @@ const inputVariants = tv({
   },
 });
 
-const inputLabelVariants = tv({
+const labelVariants = tv({
   base: "pointer-events-none absolute top-2 left-[13px] text-xs text-blue-950 transition-all peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-base",
 });
 
-interface InputProps
-  extends VariantProps<typeof inputVariants>,
-    Omit<React.ComponentProps<"input">, "size" | "disabled"> {
+interface TexteAreaProps
+  extends VariantProps<typeof textAreaVariants>,
+    Omit<React.ComponentProps<"textarea">, "size" | "disabled"> {
   error?: string;
 }
 
-export const Input = forwardRef<HTMLInputElement, InputProps>(
+export const TextArea = forwardRef<HTMLTextAreaElement, TexteAreaProps>(
   (
     { id, name, placeholder, size, disabled, className, error, ...props },
     ref
   ) => {
-    const inputId = id ?? name;
+    const textAreaId = id ?? name;
 
     return (
-      <div className="relative rounded-lg shadow-lg">
-        <input
+      <div className="relative h-30 rounded-lg">
+        <textarea
           {...props}
           ref={ref}
-          id={inputId}
+          id={textAreaId}
           name={name}
           placeholder={placeholder}
-          className={inputVariants({ size, disabled, className })}
+          className={textAreaVariants({ size, disabled, className })}
           disabled={disabled}
         />
 
-        <label htmlFor={inputId} className={inputLabelVariants()}>
+        <label htmlFor={textAreaId} className={labelVariants()}>
           {placeholder}
         </label>
 
@@ -60,4 +60,4 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
   }
 );
 
-Input.displayName = "Input";
+TextArea.displayName = "TextArea;";
