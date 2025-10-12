@@ -1,21 +1,64 @@
-import { ButtonLink } from "@/components";
+"use client";
+
 import { Input } from "./input";
 import { TextArea } from "./textArea";
+import { useForm } from "react-hook-form";
+import z from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+
+const newMessageFormSchema = z.object({
+  name: z.string({ error: "Por favor, insira seu nome!" }),
+  email: z.email({ error: "Adicione um e-mail válido!" }),
+  message: z.string({ error: "Insira uma mensagem!" }),
+});
+
+export type NewMessageProps = z.infer<typeof newMessageFormSchema>;
 
 export function ContactForm() {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    resolver: zodResolver(newMessageFormSchema),
+  });
+
+  function handleSendMessage(payload: NewMessageProps) {
+    console.log(payload);
+  }
+
   return (
-    <form className="px-10 py-8 flex flex-col justify-between">
+    <form
+      onSubmit={handleSubmit(handleSendMessage)}
+      className="px-10 py-8 flex flex-col justify-between"
+    >
       <div className="space-y-10">
-        <Input placeholder="Nome" />
+        <Input
+          placeholder="Nome"
+          {...register("name")}
+          error={errors.name?.message}
+        />
 
-        <Input placeholder="E-Mail" type="email" />
+        <Input
+          placeholder="E-Mail"
+          type="email"
+          {...register("email")}
+          error={errors.email?.message}
+        />
 
-        <TextArea placeholder="Mensagem" />
+        <TextArea
+          placeholder="Mensagem"
+          {...register("message")}
+          error={errors.message?.message}
+        />
       </div>
 
-      <ButtonLink href="" size="lg" variant="secondary">
+      <button
+        type="submit"
+        className="h-10 text-sm text-center font-semibold w-full rounded text-white bg-blue-950 hover:bg-blue-900 transition-colors"
+      >
         Enviar mensagem
-      </ButtonLink>
+      </button>
     </form>
   );
 }
