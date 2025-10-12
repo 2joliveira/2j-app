@@ -23,8 +23,20 @@ export function ContactForm() {
     resolver: zodResolver(newMessageFormSchema),
   });
 
-  function handleSendMessage(payload: NewMessageProps) {
-    console.log(payload);
+  async function handleSendMessage(payload: NewMessageProps) {
+    const res = await fetch("/api/send-email", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    });
+
+    const data = await res.json();
+
+    if (data.success) {
+      alert("Mensagem enviada com sucesso!");
+    } else {
+      alert("Erro ao enviar mensagem!");
+    }
   }
 
   return (

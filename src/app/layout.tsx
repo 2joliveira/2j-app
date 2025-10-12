@@ -23,7 +23,7 @@ export default function RootLayout({
           <NavButtons />
         </header>
 
-        <main className="flex flex-1 bg-[url(/bg-projects.jpg)] bg-auto">
+        <main className="flex flex-1 bg-[url(/bg-projects.jpg)] bg-cover bg-no-repeat">
           {children}
         </main>
       </body>
