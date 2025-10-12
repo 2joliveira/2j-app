@@ -3,6 +3,7 @@ import { SiGithub, SiLinkedin, SiWhatsapp } from "react-icons/si";
 import { ButtonLink } from "@/components/buttonLink";
 import { coiny } from "@/app/fonts";
 import contactsImage from "@/assets/contact.jpg";
+import { ContactForm } from "./components/contactForm";
 
 export default function Contact() {
   return (
@@ -21,7 +22,7 @@ export default function Contact() {
         />
 
         <div className="m-15 grid grid-cols-2 bg-white rounded-2xl">
-          <div className="space-y-5 p-10">
+          <div className="flex flex-col justify-between px-10 py-4 my-4 border-r-2 border-gray-300">
             <p className="mb-10 font-black text-blue-950">
               Se você gostou do meu trabalho ou quer saber mais sobre mim, entre
               em contato! Estou sempre aberto a novas oportunidades,
@@ -31,8 +32,9 @@ export default function Contact() {
               para falar comigo, responderei o mais breve possível. 😃
             </p>
 
-            <div className="flex pt-5 items-start flex-col gap-5">
+            <div className="flex pt-5 items-start flex-col gap-4">
               <ButtonLink
+                size="lg"
                 variant="secondary"
                 href="https://wa.me/5581996581075"
               >
@@ -41,6 +43,7 @@ export default function Contact() {
               </ButtonLink>
 
               <ButtonLink
+                size="lg"
                 variant="secondary"
                 href="https://github.com/2joliveira"
               >
@@ -49,6 +52,7 @@ export default function Contact() {
               </ButtonLink>
 
               <ButtonLink
+                size="lg"
                 variant="secondary"
                 href="https://wa.me/5581996581075"
               >
@@ -57,6 +61,8 @@ export default function Contact() {
               </ButtonLink>
             </div>
           </div>
+
+          <ContactForm />
         </div>
       </div>
     </main>
