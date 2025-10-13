@@ -51,7 +51,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
         </label>
 
         {error && (
-          <p className="absolute -bottom-5 left-2 text-sm text-red-600">
+          <p className="absolute -bottom-7 left-2 text-sm text-red-600">
             {error}
           </p>
         )}

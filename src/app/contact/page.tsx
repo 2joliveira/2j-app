@@ -1,29 +1,29 @@
 import Image from "next/image";
 import { SiGithub, SiLinkedin, SiWhatsapp } from "react-icons/si";
 import { ButtonLink } from "@/components/buttonLink";
+import { ContactForm } from "./components/contactForm";
 import { coiny } from "@/app/fonts";
 import contactsImage from "@/assets/contact.jpg";
-import { ContactForm } from "./components/contactForm";
 
 export default function Contact() {
   return (
-    <main className="w-full py-1 px-4">
+    <main className="w-full py-1 px-1 lg:px-4">
       <h1
         className={`${coiny.className} text-4xl font-extrabold text-white drop-shadow-[0_6px_4px_rgba(0,0,0,0.6)] mb-5`}
       >
         <span className="text-blue-800">Ent</span>re em contato
       </h1>
 
-      <div className="flex bg-blue-50 h-[85%] mx-10 rounded-2xl shadow-lg shadow-blue-700/40 animate-slide-down overflow-hidden">
+      <div className="flex flex-col lg:flex-row 2xl:h-[85%] bg-blue-50 mx-4 mb-8 2xl:mb-0 xl:mx-10 rounded-2xl shadow-lg shadow-blue-700/40 animate-slide-down overflow-hidden">
         <Image
           alt="contact"
           src={contactsImage}
-          className="w-2xl object-cover"
+          className="w-full lg:w-sm xl:w-2xl object-cover max-h-60 lg:max-h-full"
         />
 
-        <div className="m-15 grid grid-cols-2 bg-white rounded-2xl">
-          <div className="flex flex-col justify-between px-10 py-4 my-4 border-r-2 border-gray-300">
-            <p className="mb-10 font-black text-blue-950">
+        <div className="m-4 2xl:m-10 grid grid-cols-1 2xl:grid-cols-2 bg-white rounded-2xl">
+          <div className="flex flex-col justify-between p-4">
+            <p className="mb-5 font-black text-blue-950">
               Se você gostou do meu trabalho ou quer saber mais sobre mim, entre
               em contato! Estou sempre aberto a novas oportunidades,
               colaborações e boas ideias. Seja para discutir um projeto, trocar
@@ -32,7 +32,7 @@ export default function Contact() {
               para falar comigo, responderei o mais breve possível. 😃
             </p>
 
-            <div className="flex pt-5 items-start flex-col gap-4">
+            <div className="flex pt-2 items-start flex-col gap-2 2xl:gap-4">
               <ButtonLink
                 size="lg"
                 variant="secondary"

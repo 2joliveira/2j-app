@@ -2,7 +2,7 @@ import { forwardRef } from "react";
 import { tv, type VariantProps } from "tailwind-variants";
 
 const textAreaVariants = tv({
-  base: "peer h-full max-h-[300px] min-h-[52px] p-3 w-full rounded-lg bg-blue-50 text-blue-950 transition-all outline-none placeholder-transparent placeholder-shown:pt-3 focus:border-1 focus:border-blue-900 shadow-lg",
+  base: "peer h-full max-h-[52px] xl:max-h-[52px] min-h-[52px] p-3 w-full rounded-lg bg-blue-50 text-blue-950 transition-all outline-none placeholder-transparent placeholder-shown:pt-3 focus:border-1 focus:border-blue-900 shadow-lg",
   variants: {
     size: {
       md: "pt-6",
@@ -35,7 +35,7 @@ export const TextArea = forwardRef<HTMLTextAreaElement, TexteAreaProps>(
     const textAreaId = id ?? name;
 
     return (
-      <div className="relative h-30 rounded-lg">
+      <div className="relative h-16 rounded-lg">
         <textarea
           {...props}
           ref={ref}

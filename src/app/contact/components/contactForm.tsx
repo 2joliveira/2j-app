@@ -1,16 +1,19 @@
 "use client";
 
+import { useTransition } from "react";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import z from "zod";
+import toast from "react-hot-toast";
 import { Input } from "./input";
 import { TextArea } from "./textArea";
-import { useForm } from "react-hook-form";
-import z from "zod";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useTransition } from "react";
+import { ImSpinner9 } from "react-icons/im";
+import { BiMailSend } from "react-icons/bi";
 
 const newMessageFormSchema = z.object({
-  name: z.string({ error: "Por favor, insira seu nome!" }),
+  name: z.string().min(3, { error: "Por favor, insira seu nome!" }),
   email: z.email({ error: "Adicione um e-mail válido!" }),
-  message: z.string({ error: "Insira uma mensagem!" }),
+  message: z.string().min(3, { error: "Insira uma mensagem!" }),
 });
 
 export type NewMessageProps = z.infer<typeof newMessageFormSchema>;
@@ -20,13 +23,14 @@ export function ContactForm() {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm({
     resolver: zodResolver(newMessageFormSchema),
   });
-  const [isSendingEmail, setisSendingEmail] = useTransition();
+  const [isSendingEmail, setIsSendingEmail] = useTransition();
 
   function handleSendMessage(payload: NewMessageProps) {
-    setisSendingEmail(async () => {
+    setIsSendingEmail(async () => {
       const res = await fetch("/api/send-email", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -35,10 +39,14 @@ export function ContactForm() {
 
       const data = await res.json();
 
+      reset();
+
       if (data.success) {
-        alert("Mensagem enviada com sucesso!");
+        toast.success(
+          "Sua Mensagem foi enviada com sucesso! Entrarei em contato o mais breve possível 😄"
+        );
       } else {
-        alert("Erro ao enviar mensagem!");
+        toast.error("Erro ao enviar mensagem!");
       }
     });
   }
@@ -46,7 +54,7 @@ export function ContactForm() {
   return (
     <form
       onSubmit={handleSubmit(handleSendMessage)}
-      className="px-10 py-8 flex flex-col justify-between"
+      className="m-4 pt-8 2xl:pt-0 2xl:pl-8 border-gray-300 border-t-1 2xl:border-t-0 2xl:border-l-1 flex flex-col justify-between"
     >
       <div className="space-y-10">
         <Input
@@ -57,7 +65,7 @@ export function ContactForm() {
 
         <Input
           placeholder="E-Mail"
-          type="email"
+          type="text"
           {...register("email")}
           error={errors.email?.message}
         />
@@ -71,9 +79,21 @@ export function ContactForm() {
 
       <button
         type="submit"
-        className="h-10 text-sm text-center font-semibold w-full rounded text-white bg-blue-950 hover:bg-blue-900 transition-colors"
+        className="h-10 mt-10 text-sm text-center font-semibold w-full rounded text-white bg-blue-950 hover:bg-blue-900 transition-colors"
       >
-        {isSendingEmail ? "Enviando mensagem" : "Enviar mensagem"}
+        <div className="flex items-center justify-center gap-4">
+          {isSendingEmail ? (
+            <>
+              <ImSpinner9 className="w-5 h-5 animate-spin" />
+              <p>Enviando mensage</p>
+            </>
+          ) : (
+            <>
+              <BiMailSend className="w-5 h-5" />
+              <p>Enviar mensage</p>
+            </>
+          )}
+        </div>
       </button>
     </form>
   );
