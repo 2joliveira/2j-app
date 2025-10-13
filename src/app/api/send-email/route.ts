@@ -4,26 +4,24 @@ import { Resend } from "resend";
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(req: Request) {
-  const { name, email, message } = await req.json();
-
   try {
+    const { name, email, message } = await req.json();
+
     await resend.emails.send({
-      from: "Contato <test@jjportfolio.com>",
-      to: process.env.MAIL_TO!,
+      from: "Contato <onboarding@resend.dev>",
+      to: "contato@resend.dev",
       subject: "Nova mensagem do formulário de contato",
       html: `
-        <div>
-          <h2>Nova mensagem recebida</h2>
-          <p><strong>Nome:</strong> ${name}</p>
-          <p><strong>E-mail:</strong> ${email}</p>
-          <p><strong>Mensagem:</strong><br>${message}</p>
-        </div>
+        <h2>Nova mensagem recebida</h2>
+        <p><strong>Nome:</strong> ${name}</p>
+        <p><strong>E-mail:</strong> ${email}</p>
+        <p><strong>Mensagem:</strong> ${message}</p>
       `,
     });
 
     return NextResponse.json({ success: true });
   } catch (error) {
-    console.error(error);
+    console.error("Erro ao enviar e-mail:", error);
     return NextResponse.json({ success: false, error }, { status: 500 });
   }
 }

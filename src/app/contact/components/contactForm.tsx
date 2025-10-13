@@ -5,6 +5,7 @@ import { TextArea } from "./textArea";
 import { useForm } from "react-hook-form";
 import z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useTransition } from "react";
 
 const newMessageFormSchema = z.object({
   name: z.string({ error: "Por favor, insira seu nome!" }),
@@ -22,21 +23,24 @@ export function ContactForm() {
   } = useForm({
     resolver: zodResolver(newMessageFormSchema),
   });
+  const [isSendingEmail, setisSendingEmail] = useTransition();
 
-  async function handleSendMessage(payload: NewMessageProps) {
-    const res = await fetch("/api/send-email", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(payload),
+  function handleSendMessage(payload: NewMessageProps) {
+    setisSendingEmail(async () => {
+      const res = await fetch("/api/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      const data = await res.json();
+
+      if (data.success) {
+        alert("Mensagem enviada com sucesso!");
+      } else {
+        alert("Erro ao enviar mensagem!");
+      }
     });
-
-    const data = await res.json();
-
-    if (data.success) {
-      alert("Mensagem enviada com sucesso!");
-    } else {
-      alert("Erro ao enviar mensagem!");
-    }
   }
 
   return (
@@ -69,7 +73,7 @@ export function ContactForm() {
         type="submit"
         className="h-10 text-sm text-center font-semibold w-full rounded text-white bg-blue-950 hover:bg-blue-900 transition-colors"
       >
-        Enviar mensagem
+        {isSendingEmail ? "Enviando mensagem" : "Enviar mensagem"}
       </button>
     </form>
   );
