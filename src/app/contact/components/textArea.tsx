@@ -1,8 +1,9 @@
 import { forwardRef } from "react";
 import { tv, type VariantProps } from "tailwind-variants";
+import { FaRegCircleXmark } from "react-icons/fa6";
 
 const textAreaVariants = tv({
-  base: "peer h-full max-h-[300px] min-h-[52px] p-3 w-full rounded-lg bg-blue-50 text-blue-950 transition-all outline-none placeholder-transparent placeholder-shown:pt-3 focus:border-1 focus:border-blue-900 shadow-lg",
+  base: "peer h-full max-h-[52px] lg:max-h-[300px] min-h-[52px] p-3 w-full rounded-lg bg-blue-50 text-blue-950 transition-all outline-none placeholder-transparent placeholder-shown:pt-3 focus:border-1 focus:border-blue-900 shadow-lg",
   variants: {
     size: {
       md: "pt-6",
@@ -35,27 +36,30 @@ export const TextArea = forwardRef<HTMLTextAreaElement, TexteAreaProps>(
     const textAreaId = id ?? name;
 
     return (
-      <div className="relative h-30 rounded-lg">
-        <textarea
-          {...props}
-          ref={ref}
-          id={textAreaId}
-          name={name}
-          placeholder={placeholder}
-          className={textAreaVariants({ size, disabled, className })}
-          disabled={disabled}
-        />
+      <>
+        <div className="relative h-16 rounded-lg mb-0">
+          <textarea
+            {...props}
+            ref={ref}
+            id={textAreaId}
+            name={name}
+            placeholder={placeholder}
+            className={textAreaVariants({ size, disabled, className })}
+            disabled={disabled}
+          />
 
-        <label htmlFor={textAreaId} className={labelVariants()}>
-          {placeholder}
-        </label>
+          <label htmlFor={textAreaId} className={labelVariants()}>
+            {placeholder}
+          </label>
+        </div>
 
         {error && (
-          <p className="absolute -bottom-5 left-2 text-sm text-red-600">
+          <span className="px-2 flex gap-2 items-center text-sm text-red-600">
+            <FaRegCircleXmark className="w-4 h-4" />
             {error}
-          </p>
+          </span>
         )}
-      </div>
+      </>
     );
   }
 );
