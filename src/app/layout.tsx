@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full">
       <body cz-shortcut-listen="true" className="h-full flex flex-col">
-        <header className="flex z-20 w-full items-center justify-between px-10 py-1 bg-[#F2F5FA] shadow-lg shadow-blue-700/10">
+        <header className="flex z-20 w-full items-center justify-between px-4 xl:px-10 py-1 bg-[#F2F5FA] shadow-lg shadow-blue-700/10">
           <Image src={logo} alt="logo" width={50} height={50} />
 
           <NavButtons />

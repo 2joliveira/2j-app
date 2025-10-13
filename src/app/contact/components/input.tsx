@@ -1,5 +1,6 @@
 import { forwardRef } from "react";
 import { tv, type VariantProps } from "tailwind-variants";
+import { FaRegCircleXmark } from "react-icons/fa6";
 
 const inputVariants = tv({
   base: "peer h-[52px] w-full rounded-lg bg-blue-50 text-blue-950 transition-all outline-none placeholder-transparent placeholder-shown:pt-0 focus:border-1 focus:border-blue-900",
@@ -51,9 +52,10 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
         </label>
 
         {error && (
-          <p className="absolute -bottom-7 left-2 text-sm text-red-600">
+          <span className="absolute flex gap-2 items-center -bottom-7 left-2 text-sm text-red-600">
+            <FaRegCircleXmark className="w-4 h-4" />
             {error}
-          </p>
+          </span>
         )}
       </div>
     );

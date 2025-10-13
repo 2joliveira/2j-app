@@ -29,7 +29,7 @@ export default function Contact() {
               colaborações e boas ideias. Seja para discutir um projeto, trocar
               experiências sobre desenvolvimento ou simplesmente conversar sobre
               tecnologia, será um prazer conectar. Utilize os canais disponíveis
-              para falar comigo, responderei o mais breve possível. 😃
+              para entrar em contato comigo, responderei o mais breve possível. 😃
             </p>
 
             <div className="flex pt-2 items-start flex-col gap-2 2xl:gap-4">
