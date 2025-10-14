@@ -28,7 +28,7 @@ export function ProjectCard({
         <div className="w-full">
           <h2 className="text-3xl font-extrabold text-blue-950">{title}</h2>
 
-          <section className="max-h-[300px] xl:max-h-[430px] my-4 overflow-y-auto custom-scroll p-2 bg-blue-50">
+          <section className="max-h-[300px] xl:max-h-[500px] my-4 overflow-y-auto custom-scroll p-2 bg-blue-50">
             {description.map((paragraph, i) => (
               <p key={`paragraph-${i}`} className="mb-4 max-w-[500px]">
                 {paragraph}
@@ -62,7 +62,8 @@ export function ProjectCard({
             <ImSpinner9 className="w-10 h-10 text-blue-900 animate-spin" />
           </div>
         )}
-        {isVisible && !isLoading && (
+
+        {isVisible && (
           <ReactPlayer
             src={src}
             width="100%"
