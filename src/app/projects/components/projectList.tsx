@@ -10,6 +10,7 @@ import slides from "../projects.json";
 
 export function ProjectList() {
   const [selectedIndex, setSelectedIndex] = useState(0);
+  const [isLoading, setIsLoading] = useState(false);
   const [emblaRef, emblaApi] = useEmblaCarousel(
     { loop: false, align: "center" },
     [
@@ -38,7 +39,12 @@ export function ProjectList() {
 
   const onSelect = useCallback(() => {
     if (!emblaApi) return;
+
+    setIsLoading(true);
+
     setSelectedIndex(emblaApi.selectedScrollSnap());
+
+    setTimeout(() => setIsLoading(false), 1000);
   }, [emblaApi]);
 
   useEffect(() => {
@@ -62,7 +68,11 @@ export function ProjectList() {
               }}
               transition={{ duration: 0.5 }}
             >
-              <ProjectCard slide={slide} isVisible={selectedIndex === i} />
+              <ProjectCard
+                slide={slide}
+                isVisible={selectedIndex === i}
+                isLoading={isLoading}
+              />
             </motion.div>
           ))}
         </div>

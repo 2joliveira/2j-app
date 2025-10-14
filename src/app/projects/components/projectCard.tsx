@@ -1,10 +1,12 @@
 import { ButtonLink } from "@/components/buttonLink";
 import dynamic from "next/dynamic";
+import { ImSpinner9 } from "react-icons/im";
 
 const ReactPlayer = dynamic(() => import("react-player"), { ssr: false });
 
 interface ProjectCardProps {
   isVisible: boolean;
+  isLoading: boolean;
   slide: {
     title: string;
     src: string;
@@ -17,6 +19,7 @@ interface ProjectCardProps {
 
 export function ProjectCard({
   isVisible,
+  isLoading,
   slide: { title, description, web_repository, api_repository, src, domain },
 }: ProjectCardProps) {
   return (
@@ -53,8 +56,13 @@ export function ProjectCard({
         </div>
       </section>
 
-      <div className="max-w-[1300px] h-full aspect-video rounded-xl bg-[#EDF2F8] overflow-hidden">
-        {isVisible && (
+      <div className="max-w-[1300px] flex-1 h-full aspect-video rounded-xl bg-[#EDF2F8] overflow-hidden">
+        {isLoading && (
+          <div className="w-full h-full flex items-center justify-center">
+            <ImSpinner9 className="w-10 h-10 text-blue-900 animate-spin" />
+          </div>
+        )}
+        {isVisible && !isLoading && (
           <ReactPlayer
             src={src}
             width="100%"
