@@ -11,7 +11,7 @@ import slides from "../projects.json";
 export function ProjectList() {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [emblaRef, emblaApi] = useEmblaCarousel(
-    { loop: true, align: "center" },
+    { loop: false, align: "center" },
     [
       Autoplay({
         delay: 10000,
@@ -48,7 +48,7 @@ export function ProjectList() {
   }, [emblaApi, onSelect]);
 
   return (
-    <main className="flex-1 p-4 bg-[#EDF2F8] mx-10 rounded-2xl shadow-lg shadow-blue-700/40 animate-slide-down">
+    <main className="flex-1 p-4 bg-[#EDF2F8] xl:mx-10 rounded-2xl shadow-lg shadow-blue-700/40 animate-slide-down mb-4">
       <div className="overflow-hidden" ref={emblaRef}>
         <div className="flex">
           {slides.map((slide, i) => (
@@ -62,7 +62,7 @@ export function ProjectList() {
               }}
               transition={{ duration: 0.5 }}
             >
-              <ProjectCard slide={slide} />
+              <ProjectCard slide={slide} isVisible={selectedIndex === i} />
             </motion.div>
           ))}
         </div>
@@ -71,7 +71,8 @@ export function ProjectList() {
       <div className="flex justify-between items-center mt-3 gap-2">
         <button
           onClick={scrollPrev}
-          className="text-blue-950 rounded-lg p-2 transition hover:text-blue-900 hover:shadow-[0_0_10px_rgba(59,130,246,0.3)]"
+          disabled={selectedIndex === 0}
+          className="text-blue-950 rounded-lg p-2 transition disabled:opacity-50 disabled:pointer-events-none hover:text-blue-900 hover:shadow-[0_0_10px_rgba(59,130,246,0.3)]"
           aria-label="Anterior"
         >
           <TbArrowBigLeftFilled className="w-5 h-5" />
@@ -93,7 +94,8 @@ export function ProjectList() {
 
         <button
           onClick={scrollNext}
-          className="text-blue-950 rounded-lg p-2 transition hover:text-blue-900 hover:shadow-[0_0_10px_rgba(59,130,246,0.3)]"
+          disabled={selectedIndex === slides.length - 1}
+          className="text-blue-950 rounded-lg p-2 transition disabled:opacity-50 disabled:pointer-events-none hover:text-blue-900 hover:shadow-[0_0_10px_rgba(59,130,246,0.3)]"
           aria-label="Próximo"
         >
           <TbArrowBigRightFilled className="w-5 h-5" />
