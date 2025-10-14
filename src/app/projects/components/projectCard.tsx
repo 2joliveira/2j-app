@@ -23,7 +23,7 @@ export function ProjectCard({
   slide: { title, description, web_repository, api_repository, src, domain },
 }: ProjectCardProps) {
   return (
-    <div className="flex flex-col-reverse xl:flex-row justify-between gap-6">
+    <div className="flex flex-col-reverse h-full items-center justify-center xl:flex-row justify-between gap-6">
       <section className="flex flex-col items-center justify-between">
         <div className="w-full">
           <h2 className="text-3xl font-extrabold text-blue-950">{title}</h2>
