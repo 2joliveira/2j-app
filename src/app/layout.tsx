@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+import type { Metadata } from "next";
 import { Toaster } from "react-hot-toast";
 import { HeaderMain } from "@/components/headerMain";
 
@@ -10,8 +10,8 @@ export const metadata: Metadata = {
     "Portfólio, desenvolvedor web especializado em React, Next.js, React Native e TypeScript. Foco em performance, design responsivo e boas práticas de código.",
   robots: "index, follow",
   openGraph: {
-    title: "Portfolio, Dev front end",
-    description: "Desenvolvedor Web, focado em React, Next e Typescript",
+    title: "Portfolio, Dev Full Stack",
+    description: "Desenvolvedor Web, focado em React, Next, Typescript e Node",
     url: "https://2j-app.vercel.app/og-image.jpg",
     siteName: "2j-app",
     locale: "pt_BR",
