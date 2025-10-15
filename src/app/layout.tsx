@@ -6,6 +6,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Jefferson Oliveira",
+  description: "Portfólio, desenvolvedor web especializado em React, Next.js, React Native e TypeScript. Foco em performance, design responsivo e boas práticas de código."
 };
 
 export default function RootLayout({
@@ -18,7 +19,7 @@ export default function RootLayout({
       <body cz-shortcut-listen="true" className="h-full flex flex-col">
         <HeaderMain />
 
-        <main className="flex flex-1 bg-[url(/bg-projects.jpg)] bg-cover bg-no-repeat">
+        <main className="flex flex-1 bg-[url(/bg.jpg)] bg-cover bg-no-repeat">
           {children}
         </main>
 
