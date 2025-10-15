@@ -34,14 +34,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="h-full">
-      <head>
-        <link
-          rel="preload"
-          as="style"
-          href="/_next/static/css/69ab4779d4d67347.css"
-        />
-      </head>
-
       <body cz-shortcut-listen="true" className="h-full flex flex-col">
         <HeaderMain />
 
