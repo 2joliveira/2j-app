@@ -6,7 +6,25 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Jefferson Oliveira",
-  description: "Portfólio, desenvolvedor web especializado em React, Next.js, React Native e TypeScript. Foco em performance, design responsivo e boas práticas de código."
+  description:
+    "Portfólio, desenvolvedor web especializado em React, Next.js, React Native e TypeScript. Foco em performance, design responsivo e boas práticas de código.",
+  robots: "index, follow",
+  openGraph: {
+    title: "Portfolio, Dev front end",
+    description: "Desenvolvedor Web, focado em React, Next e Typescript",
+    url: "https://2j-app.vercel.app/og-image.jpg",
+    siteName: "2j-app",
+    locale: "pt_BR",
+    type: "website",
+    images: [
+      {
+        url: "https://2j-app.vercel.app/og-image.jpg",
+        width: 800,
+        height: 600,
+        alt: "2j-app",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
