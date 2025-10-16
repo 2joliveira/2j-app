@@ -4,7 +4,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { ButtonLink } from "./buttonLink";
 import { FaDownload } from "react-icons/fa";
 
-export function DialogButtons() {
+export function DropdownNavMenu() {
   return (
     <DropdownMenu.Root>
       <DropdownMenu.Trigger asChild>
@@ -19,7 +19,7 @@ export function DialogButtons() {
           sideOffset={5}
         >
           <DropdownMenu.Item className="outline-none">
-            <ButtonLink href="/contact">CONTATO</ButtonLink>
+            <ButtonLink href="/">INÍCIO</ButtonLink>
           </DropdownMenu.Item>
 
           <DropdownMenu.Item className="outline-none">
@@ -27,11 +27,11 @@ export function DialogButtons() {
           </DropdownMenu.Item>
 
           <DropdownMenu.Item className="outline-none">
-            <ButtonLink href="/">INÍCIO</ButtonLink>
+            <ButtonLink href="/contact">CONTATO</ButtonLink>
           </DropdownMenu.Item>
 
           <DropdownMenu.Item className="outline-none">
-            <ButtonLink href="/curriculum/curriculo.pdf" download>
+            <ButtonLink as="/curriculum/file.pdf" href="#" download>
               <div className="flex gap-2">
                 <p>CURRÍCULO</p>
                 <FaDownload className="w-4 h-4" />
