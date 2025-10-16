@@ -9,7 +9,7 @@ export function NavButtons() {
       <ButtonLink href="/">INÍCIO</ButtonLink>
       <ButtonLink href="/projects">PROJETOS</ButtonLink>
       <ButtonLink href="/contact">CONTATO</ButtonLink>
-      <ButtonLink href="/curriculum/curriculo.pdf" download>
+      <ButtonLink as="/curriculum/file.pdf" href="#" download>
         <div className="flex gap-2">
           <p>CURRÍCULO</p>
           <FaDownload className="w-4 h-4" />

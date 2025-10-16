@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import logo from "@/assets/logo.png";
 import { NavButtons } from "@/components/navButtons";
-import { DialogButtons } from "./dialogButtons";
+import { DropdownNavMenu } from "./dropdownNavMenu";
 
 export function HeaderMain() {
   const divRef = useRef<HTMLDivElement>(null);
@@ -31,7 +31,7 @@ export function HeaderMain() {
     >
       <Image src={logo} alt="logo" width={50} height={50} />
 
-      {width > 550 ? <NavButtons /> : <DialogButtons />}
+      {width > 550 ? <NavButtons /> : <DropdownNavMenu />}
     </header>
   );
 }
