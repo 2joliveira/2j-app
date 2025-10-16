@@ -23,14 +23,14 @@ export function ProjectCard({
   slide: { title, description, web_repository, api_repository, src, domain },
 }: ProjectCardProps) {
   return (
-    <div className="flex flex-col-reverse h-full items-center justify-center xl:flex-row justify-between gap-6">
-      <section className="flex flex-col items-center justify-between">
+    <div className="flex flex-col-reverse h-full items-center xl:flex-row justify-between gap-6">
+      <section className="flex xl:w-[25%] flex-col items-center justify-between">
         <div className="w-full">
           <h2 className="text-3xl font-extrabold text-blue-950">{title}</h2>
 
           <section className="max-h-[300px] xl:max-h-[500px] my-4 overflow-y-auto custom-scroll p-2 bg-blue-50">
             {description.map((paragraph, i) => (
-              <p key={`paragraph-${i}`} className="mb-4 max-w-[500px]">
+              <p key={`paragraph-${i}`} className="mb-4 xl:max-w-[500px]">
                 {paragraph}
               </p>
             ))}
