@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { SiGithub, SiLinkedin, SiWhatsapp } from "react-icons/si";
+import { SiGithub, SiGmail, SiLinkedin, SiWhatsapp } from "react-icons/si";
 import { ButtonLink } from "@/components/buttonLink";
 import { ContactForm } from "./components/contactForm";
 import { coiny } from "@/app/fonts";
@@ -29,7 +29,8 @@ export default function Contact() {
               colaborações e boas ideias. Seja para discutir um projeto, trocar
               experiências sobre desenvolvimento ou simplesmente conversar sobre
               tecnologia, será um prazer conectar. Utilize os canais disponíveis
-              para entrar em contato comigo, responderei o mais breve possível. 😃
+              para entrar em contato comigo, responderei o mais breve possível.
+              😃
             </p>
 
             <div className="flex pt-2 items-start flex-col gap-2 2xl:gap-4">
@@ -58,6 +59,15 @@ export default function Contact() {
               >
                 <SiLinkedin />
                 Linkedin
+              </ButtonLink>
+
+              <ButtonLink
+                size="lg"
+                variant="secondary"
+                href="mailto:jj.oliveira2118@gmail.com"
+              >
+                <SiGmail />
+                E-mail
               </ButtonLink>
             </div>
           </div>
