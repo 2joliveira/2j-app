@@ -1,5 +1,3 @@
-"use client";
-
 import { ButtonLink, MotionPhotos } from "@/components";
 import { SiGithub, SiLinkedin } from "react-icons/si";
 import profileImage from "@/assets/profile.jpg";
