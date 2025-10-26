@@ -55,7 +55,7 @@ export default function Contact() {
               <ButtonLink
                 size="lg"
                 variant="secondary"
-                href="https://wa.me/5581996581075"
+                href="https://www.linkedin.com/in/jeffersonjcoliveira/"
               >
                 <SiLinkedin />
                 Linkedin
