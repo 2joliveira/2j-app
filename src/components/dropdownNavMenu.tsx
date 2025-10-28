@@ -5,8 +5,12 @@ import { ButtonLink } from "./buttonLink";
 import { FaDownload } from "react-icons/fa";
 
 export function DropdownNavMenu() {
+  const [open, setOpen] = React.useState(false);
+
+  const handleItemClick = () => setOpen(false);
+
   return (
-    <DropdownMenu.Root>
+    <DropdownMenu.Root open={open} onOpenChange={setOpen}>
       <DropdownMenu.Trigger asChild>
         <button className="flex items-center justify-center cursor-pointer transition rounded gap-2 text-sm font-semibold text-blue-950 hover:text-blue-900 hover:bg-blue-50 hover:shadow-[0_0_10px_rgba(59,130,246,0.3)]">
           <GiHamburgerMenu className="w-7 h-7" />
@@ -19,19 +23,30 @@ export function DropdownNavMenu() {
           sideOffset={5}
         >
           <DropdownMenu.Item className="outline-none">
-            <ButtonLink href="/">INÍCIO</ButtonLink>
+            <ButtonLink href="/" onClick={handleItemClick}>
+              INÍCIO
+            </ButtonLink>
           </DropdownMenu.Item>
 
           <DropdownMenu.Item className="outline-none">
-            <ButtonLink href="/projects">PROJETOS</ButtonLink>
+            <ButtonLink href="/projects" onClick={handleItemClick}>
+              PROJETOS
+            </ButtonLink>
           </DropdownMenu.Item>
 
           <DropdownMenu.Item className="outline-none">
-            <ButtonLink href="/contact">CONTATO</ButtonLink>
+            <ButtonLink href="/contact" onClick={handleItemClick}>
+              CONTATO
+            </ButtonLink>
           </DropdownMenu.Item>
 
           <DropdownMenu.Item className="outline-none">
-            <ButtonLink as="/curriculum/file.pdf" href="#" download>
+            <ButtonLink
+              as="/curriculum/file.pdf"
+              href="#"
+              download
+              onClick={handleItemClick}
+            >
               <div className="flex gap-2">
                 <p>CURRÍCULO</p>
                 <FaDownload className="w-4 h-4" />

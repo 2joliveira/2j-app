@@ -6,7 +6,7 @@ import { motion } from "motion/react";
 
 export function HomeImageContainer() {
   return (
-    <figure className="absolute -top-80 -right-30 z-0 animate-slide-down">
+    <figure className="hidden md:block absolute -top-80 -right-30 z-0 animate-slide-down">
       <motion.div
         key={homeImage.src}
         initial={{ y: -150, opacity: 0 }}
