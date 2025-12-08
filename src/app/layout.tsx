@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Toaster } from "react-hot-toast";
+import { Analytics } from "@vercel/analytics/next"
 import { HeaderMain } from "@/components/headerMain";
+
 
 import "./globals.css";
 
@@ -42,6 +44,8 @@ export default function RootLayout({
         </main>
 
         <Toaster />
+
+        <Analytics />
       </body>
     </html>
   );
