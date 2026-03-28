@@ -16,14 +16,6 @@ export default function Home() {
             desafiadores e inovadores, equilibrando trabalho sério com
             criatividade.
           </p>
-
-          <p>
-            Fora do código, sou entusiasta de esportes, especialmente Muay Thai
-            e futebol, e adoro motocicletas, carros e viagens. Minha rotina
-            combina trabalho remoto com um estilo de vida flexível, explorando
-            novas experiências enquanto construo projetos que realmente fazem a
-            diferença.
-          </p>
         </article>
       </div>
 
