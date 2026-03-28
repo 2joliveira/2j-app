@@ -42,7 +42,7 @@ export function DropdownNavMenu() {
 
           <DropdownMenu.Item className="outline-none">
             <ButtonLink
-              as="/curriculum/file.pdf"
+              as="/curriculum/curriculo_jefferson_oliveira.pdf"
               href="#"
               download
               onClick={handleItemClick}
