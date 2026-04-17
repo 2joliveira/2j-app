@@ -1,12 +1,13 @@
 import { forwardRef } from "react";
 import { tv, type VariantProps } from "tailwind-variants";
-import { FaRegCircleXmark } from "react-icons/fa6";
+import { InputErrorMessage } from "@/components";
 
 const inputTextVariants = tv({
-  base: "peer h-[52px] w-full rounded-lg bg-blue-50 text-blue-950 transition-all outline-none placeholder-transparent placeholder-shown:pt-0 focus:border-1 focus:border-blue-900",
+  base: `peer h-[45px] w-full rounded-lg bg-blue-50 text-blue-950 transition-all
+    outline-none placeholder-transparent placeholder-shown:pt-0 focus:border-1 focus:border-blue-900`,
   variants: {
     size: {
-      md: "px-3 pt-4",
+      md: "px-3 pt-3",
     },
     disabled: {
       true: "pointer-events-none opacity-60",
@@ -19,12 +20,13 @@ const inputTextVariants = tv({
 });
 
 const inputTextLabelVariants = tv({
-  base: "pointer-events-none absolute top-2 left-[13px] text-xs text-blue-950 transition-all peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-base",
+  base: `pointer-events-none absolute top-0.5 left-[13px] text-xs text-blue-950
+  transition-all peer-placeholder-shown:top-2.5 peer-placeholder-shown:text-base`,
 });
 
 interface InputProps
   extends VariantProps<typeof inputTextVariants>,
-    Omit<React.ComponentProps<"input">, "size" | "disabled"> {
+  Omit<React.ComponentProps<"input">, "size" | "disabled"> {
   error?: string;
 }
 
@@ -52,10 +54,7 @@ export const InputText = forwardRef<HTMLInputElement, InputProps>(
         </label>
 
         {error && (
-          <span className="absolute flex gap-2 items-center -bottom-7 left-2 text-sm text-red-600">
-            <FaRegCircleXmark className="w-4 h-4" />
-            {error}
-          </span>
+          <InputErrorMessage error={error} />
         )}
       </div>
     );

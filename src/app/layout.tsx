@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Toaster } from "react-hot-toast";
 import { Analytics } from "@vercel/analytics/next";
-import { HeaderMain } from "@/components/headerMain";
+import { HeaderMain, BackgroundWrapper } from "@/components";
 
 import "./globals.css";
 
@@ -38,9 +38,9 @@ export default function RootLayout({
       <body cz-shortcut-listen="true" className="h-full flex flex-col">
         <HeaderMain />
 
-        <main className="flex flex-1 bg-[url(/bg.jpg)] bg-cover bg-no-repeat">
+        <BackgroundWrapper>
           {children}
-        </main>
+        </BackgroundWrapper>
 
         <Toaster />
 

@@ -7,7 +7,7 @@ import contactsImage from "@/assets/contact.jpg";
 
 export default function Contact() {
   return (
-    <main className="w-full py-1 px-1 lg:px-4">
+    <main className="w-full py-4 px-4 lg:px-4">
       <h1
         className={`${coiny.className} text-4xl font-extrabold text-white drop-shadow-[0_6px_4px_rgba(0,0,0,0.6)] mb-5`}
       >

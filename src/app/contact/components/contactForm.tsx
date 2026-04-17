@@ -5,10 +5,9 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import z from "zod";
 import toast from "react-hot-toast";
-import { InputText } from "../../../components/ui/inputText";
-import { InputTextArea } from "../../../components/ui/inputTextArea";
 import { ImSpinner9 } from "react-icons/im";
 import { BiMailSend } from "react-icons/bi";
+import { InputText, InputTextArea } from "@/components";
 
 const newMessageFormSchema = z.object({
   name: z.string().min(3, { error: "Por favor, insira seu nome!" }),
@@ -56,7 +55,7 @@ export function ContactForm() {
       onSubmit={handleSubmit(handleSendMessage)}
       className="m-4 pt-8 2xl:pt-0 2xl:pl-8 border-gray-300 border-t-1 2xl:border-t-0 2xl:border-l-1 flex flex-col justify-between"
     >
-      <div className="space-y-10">
+      <div className="space-y-5">
         <InputText
           placeholder="Nome"
           {...register("name")}
