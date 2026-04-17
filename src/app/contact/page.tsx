@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { SiGithub, SiGmail, SiLinkedin, SiWhatsapp } from "react-icons/si";
-import { ButtonLink } from "@/components/buttonLink";
+import { ButtonLink } from "@/components/ui/buttonLink";
 import { ContactForm } from "./components/contactForm";
 import { coiny } from "@/app/fonts";
 import contactsImage from "@/assets/contact.jpg";
@@ -21,9 +21,9 @@ export default function Contact() {
           className="w-full lg:w-sm xl:w-2xl object-cover max-h-60 lg:max-h-full"
         />
 
-        <div className="m-4 2xl:m-10 grid grid-cols-1 2xl:grid-cols-2 bg-white rounded-2xl">
+        <div className="m-4 p-4 2xl:m-10 grid grid-cols-1 2xl:grid-cols-2 bg-white rounded-2xl">
           <div className="flex flex-col justify-between p-4">
-            <p className="mb-5 font-black text-blue-950">
+            <p className="mb-5 font-black text-sm text-blue-950">
               Se você gostou do meu trabalho ou quer saber mais sobre mim, entre
               em contato! Estou sempre aberto a novas oportunidades,
               colaborações e boas ideias. Seja para discutir um projeto, trocar

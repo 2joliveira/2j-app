@@ -1,4 +1,4 @@
-import { ButtonLink } from "@/components/buttonLink";
+import { ButtonLink } from "@/components/ui/buttonLink";
 import dynamic from "next/dynamic";
 import { ImSpinner9 } from "react-icons/im";
 

@@ -2,7 +2,7 @@ import { forwardRef } from "react";
 import { tv, type VariantProps } from "tailwind-variants";
 import { FaRegCircleXmark } from "react-icons/fa6";
 
-const textAreaVariants = tv({
+const inputTextAreaVariants = tv({
   base: "peer h-full max-h-[52px] lg:max-h-[300px] min-h-[52px] p-3 w-full rounded-lg bg-blue-50 text-blue-950 transition-all outline-none placeholder-transparent placeholder-shown:pt-3 focus:border-1 focus:border-blue-900 shadow-lg",
   variants: {
     size: {
@@ -22,13 +22,13 @@ const labelVariants = tv({
   base: "pointer-events-none absolute top-2 left-[13px] text-xs text-blue-950 transition-all peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-base",
 });
 
-interface TexteAreaProps
-  extends VariantProps<typeof textAreaVariants>,
+interface InputTexteAreaProps
+  extends VariantProps<typeof inputTextAreaVariants>,
     Omit<React.ComponentProps<"textarea">, "size" | "disabled"> {
   error?: string;
 }
 
-export const TextArea = forwardRef<HTMLTextAreaElement, TexteAreaProps>(
+export const InputTextArea = forwardRef<HTMLTextAreaElement, InputTexteAreaProps>(
   (
     { id, name, placeholder, size, disabled, className, error, ...props },
     ref
@@ -44,7 +44,7 @@ export const TextArea = forwardRef<HTMLTextAreaElement, TexteAreaProps>(
             id={textAreaId}
             name={name}
             placeholder={placeholder}
-            className={textAreaVariants({ size, disabled, className })}
+            className={inputTextAreaVariants({ size, disabled, className })}
             disabled={disabled}
           />
 
@@ -64,4 +64,4 @@ export const TextArea = forwardRef<HTMLTextAreaElement, TexteAreaProps>(
   }
 );
 
-TextArea.displayName = "TextArea;";
+InputTextArea.displayName = "TextArea;";

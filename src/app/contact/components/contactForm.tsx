@@ -5,8 +5,8 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import z from "zod";
 import toast from "react-hot-toast";
-import { Input } from "./input";
-import { TextArea } from "./textArea";
+import { InputText } from "../../../components/ui/inputText";
+import { InputTextArea } from "../../../components/ui/inputTextArea";
 import { ImSpinner9 } from "react-icons/im";
 import { BiMailSend } from "react-icons/bi";
 
@@ -57,20 +57,20 @@ export function ContactForm() {
       className="m-4 pt-8 2xl:pt-0 2xl:pl-8 border-gray-300 border-t-1 2xl:border-t-0 2xl:border-l-1 flex flex-col justify-between"
     >
       <div className="space-y-10">
-        <Input
+        <InputText
           placeholder="Nome"
           {...register("name")}
           error={errors.name?.message}
         />
 
-        <Input
+        <InputText
           placeholder="E-Mail"
           type="text"
           {...register("email")}
           error={errors.email?.message}
         />
 
-        <TextArea
+        <InputTextArea
           placeholder="Mensagem"
           {...register("message")}
           error={errors.message?.message}

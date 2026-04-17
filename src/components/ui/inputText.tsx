@@ -2,7 +2,7 @@ import { forwardRef } from "react";
 import { tv, type VariantProps } from "tailwind-variants";
 import { FaRegCircleXmark } from "react-icons/fa6";
 
-const inputVariants = tv({
+const inputTextVariants = tv({
   base: "peer h-[52px] w-full rounded-lg bg-blue-50 text-blue-950 transition-all outline-none placeholder-transparent placeholder-shown:pt-0 focus:border-1 focus:border-blue-900",
   variants: {
     size: {
@@ -18,17 +18,17 @@ const inputVariants = tv({
   },
 });
 
-const inputLabelVariants = tv({
+const inputTextLabelVariants = tv({
   base: "pointer-events-none absolute top-2 left-[13px] text-xs text-blue-950 transition-all peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-base",
 });
 
 interface InputProps
-  extends VariantProps<typeof inputVariants>,
+  extends VariantProps<typeof inputTextVariants>,
     Omit<React.ComponentProps<"input">, "size" | "disabled"> {
   error?: string;
 }
 
-export const Input = forwardRef<HTMLInputElement, InputProps>(
+export const InputText = forwardRef<HTMLInputElement, InputProps>(
   (
     { id, name, placeholder, size, disabled, className, error, ...props },
     ref
@@ -43,11 +43,11 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
           id={inputId}
           name={name}
           placeholder={placeholder}
-          className={inputVariants({ size, disabled, className })}
+          className={inputTextVariants({ size, disabled, className })}
           disabled={disabled}
         />
 
-        <label htmlFor={inputId} className={inputLabelVariants()}>
+        <label htmlFor={inputId} className={inputTextLabelVariants()}>
           {placeholder}
         </label>
 
@@ -62,4 +62,4 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
   }
 );
 
-Input.displayName = "Input";
+InputText.displayName = "Input";

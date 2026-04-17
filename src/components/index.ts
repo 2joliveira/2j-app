@@ -1,4 +1,4 @@
-export * from "./buttonLink";
+export * from "./ui/buttonLink";
 export * from "./motionPhotos";
 export * from "./navButtons";
 export * from "./profileSection";
