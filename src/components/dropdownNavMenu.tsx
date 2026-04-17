@@ -1,7 +1,7 @@
 import * as React from "react";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { ButtonLink } from "./buttonLink";
+import { ButtonLink } from "./ui/buttonLink";
 import { FaDownload } from "react-icons/fa";
 
 export function DropdownNavMenu() {

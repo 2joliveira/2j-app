@@ -1,5 +1,5 @@
 import { FaDownload } from "react-icons/fa";
-import { ButtonLink } from "./buttonLink";
+import { ButtonLink } from "./ui/buttonLink";
 
 export function NavButtons() {
  
