@@ -4,14 +4,13 @@ import { coiny } from "@/app/fonts";
 import { ProjectList } from "./components/projectList";
 
 export const metadata: Metadata = {
-  title: "Projetos",
-  description:
-    "Projetos desenvolvidos com React, Next.js, TypeScript e Tailwind CSS.",
-  robots: "index, follow",
+  title: "Projetos | Jefferson Oliveira - Desenvolvedor Full Stack",
+  description: "Explore os projetos desenvolvidos por Jefferson Oliveira, utilizando React, Next.js, TypeScript, Tailwind CSS e Node.js. Veja exemplos de aplicações web modernas.",
+  keywords: ["desenvolvedor", "React", "Next.js", "TypeScript", "Tailwind CSS", "Node.js"],
   openGraph: {
-    title: "Portfolio, Dev Full stack",
-    description: "Desenvolvedor Web, focado em React, Next, Typescript e Node",
-    url: "https://2j-app.vercel.app/og-projects-image.jpg",
+    title: "Projetos - Jefferson Oliveira",
+    description: "Veja meus projetos em React, Next.js, TypeScript e Node.js.",
+    url: "https://2j-app.vercel.app/projects",
     siteName: "2j-app",
     locale: "pt_BR",
     type: "website",
@@ -20,7 +19,7 @@ export const metadata: Metadata = {
         url: "https://2j-app.vercel.app/og-projects-image.jpg",
         width: 800,
         height: 600,
-        alt: "2j-app",
+        alt: "Projetos - Jefferson Oliveira",
       },
     ],
   },

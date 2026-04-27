@@ -1,9 +1,21 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import { SiGithub, SiGmail, SiLinkedin, SiWhatsapp } from "react-icons/si";
 import { ButtonLink } from "@/components/ui/buttonLink";
 import { ContactForm } from "./components/contactForm";
 import { coiny } from "@/app/fonts";
 import contactsImage from "@/assets/contact.jpg";
+
+export const metadata: Metadata = {
+  title: "Contato | Jefferson Oliveira - Desenvolvedor Full Stack",
+  description: "Entre em contato com Jefferson Oliveira. Estou disponível para oportunidades de trabalho, colaborações e discussões sobre desenvolvimento web.",
+  keywords: ["contato", "desenvolvedor", "React", "React Native", "Next.js", "Node.js"],
+  openGraph: {
+    title: "Contato - Jefferson Oliveira",
+    description: "Entre em contato para oportunidades de colaboração e desenvolvimento web.",
+    url: "https://2j-app.vercel.app/contact",
+  },
+};
 
 export default function Contact() {
   return (
