@@ -9,6 +9,7 @@ import { DropdownNavMenu } from "./dropdownNavMenu";
 export function HeaderMain() {
   const divRef = useRef<HTMLDivElement>(null);
   const [width, setWidth] = useState(0);
+  const [loadedImage, setLoadedImage] = useState(false);
 
   useEffect(() => {
     const element = divRef.current;
@@ -27,11 +28,11 @@ export function HeaderMain() {
   return (
     <header
       ref={divRef}
-      className="flex z-20 w-full items-center justify-between px-4 xl:px-10 py-1 bg-[#F2F5FA] shadow-lg shadow-blue-700/10"
+      className={`${!loadedImage ? "absolute -top-100" : "flex"} z-20 w-full items-center justify-between px-4 xl:px-10 py-1 bg-[#F2F5FA] shadow-lg shadow-blue-700/10`}
     >
-      <Image src={logo} alt="logo" width={50} height={50} />
+      <Image src={logo} alt="logo" width={50} height={50} onLoad={() => setLoadedImage(true)} />
 
-      {width > 550 ? <NavButtons /> : <DropdownNavMenu />}
+      {width < 550 ? <DropdownNavMenu /> : <NavButtons />}
     </header>
   );
 }

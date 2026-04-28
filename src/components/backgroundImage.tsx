@@ -4,14 +4,11 @@ import { useState } from "react";
 import Image from "next/image";
 
 export function BackgroundWrapper({ children }: { children: React.ReactNode }) {
-  const [loaded, setLoaded] = useState(false);
-
-  console.log({ loaded });
-
+  const [loadedImage, setLoadedImage] = useState(false);
 
   return (
     <main className="relative flex flex-1">
-      {!loaded && (
+      {!loadedImage && (
         <div className="absolute inset-0 bg-black animate-pulse z-10" />
       )}
 
@@ -21,10 +18,10 @@ export function BackgroundWrapper({ children }: { children: React.ReactNode }) {
         fill
         priority
         className="object-cover"
-        onLoadingComplete={() => setLoaded(true)}
+        onLoad={() => setLoadedImage(true)}
       />
 
-      {loaded && <div className="relative z-20 w-full">{children}</div>}
+      {loadedImage && <div className="relative z-20 w-full">{children}</div>}
     </main>
   );
 }

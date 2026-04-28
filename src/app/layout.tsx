@@ -6,6 +6,7 @@ import { HeaderMain, BackgroundWrapper } from "@/components";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://2j-app.vercel.app"),
   title: "Jefferson Oliveira - Desenvolvedor Full Stack",
   description:
     "Portfólio de Jefferson Oliveira, desenvolvedor web especializado em React, Next.js, React Native e TypeScript. Foco em performance, design responsivo e boas práticas de código.",
@@ -29,12 +30,6 @@ export const metadata: Metadata = {
         alt: "Jefferson Oliveira - Desenvolvedor Full Stack",
       },
     ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Jefferson Oliveira - Desenvolvedor Full Stack",
-    description: "Portfólio profissional: Especialista em React, Next.js, TypeScript e desenvolvimento web moderno.",
-    images: ["/og-image.jpg"],
   },
   alternates: {
     canonical: "https://2j-app.vercel.app",
